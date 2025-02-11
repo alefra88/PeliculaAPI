@@ -1,0 +1,6 @@
+@PruebaManana_HostAddress = http://localhost:5044
+
+GET {{PruebaManana_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
