@@ -12,7 +12,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<Servicios>();
-
+//CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("nueva politica", app =>
+    {
+        app.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 builder.Services.AddDbContext<DBContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DbCon"));
